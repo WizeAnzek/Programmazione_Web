@@ -46,6 +46,14 @@ body {
     color: black;
 }
 
+.active-nav-link {
+    border-bottom: 1px solid black;
+}
+
+.active-nav-link a {
+    color: black !important
+}
+
 /* Portfolio styles */
 
 .portfolio-items-wrapper {
@@ -114,7 +122,7 @@ body {
 }
 
 .profile-content-wrapper h1 {
-
+    color: lightseagreen;
 }
 
 /* https://www.youtube.com/watch?v=5bMdjkfvONE */
