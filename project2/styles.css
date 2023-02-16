@@ -59,6 +59,7 @@ body {
     color: black !important
 }
 
+
 /* Portfolio styles */
 
 .portfolio-items-wrapper {
@@ -115,6 +116,13 @@ body {
 .img-darken {
     transition: 1s;
     filter: brightness(10%);
+}
+
+@media only screen and (max-width: 600px) {
+  .portfolio-items-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+}
 }
 
 /* About page */
