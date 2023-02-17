@@ -7,6 +7,7 @@
     <title>About</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato">
     <link rel="stylesheet" href="styles.css">
+    <script src="javascript.js"></script>
 </head>
 <body>
     <!--CONTAINER-->
@@ -58,9 +59,10 @@
                 </div>
             
                 <div class="profile-content-wrapper">
-                    <h1>Lorem Lorem</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate debitis exercitationem quas ullam officia assumenda sit earum ad ut necessitatibus deserunt error incidunt nisi tempora illum totam, omnis optio libero.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem nesciunt, excepturi asperiores natus omnis tenetur facilis est quia iusto perspiciatis itaque, architecto voluptate, adipisci corporis non! Nemo expedita hic molestias.</p>
+                    <input type="button" value="Stampa Storage Semplice" onclick="stampaStorageSemplice();">
+                    <input type="button" value="Stampa Storage Tabella" onclick="stampaStorageTabella();">
+                    <input type="button" value="Reset Storage" onclick="resetStorageUtenti();">
+                    <div id="vistaStorage" style="height:400px"></div>
                 </div>
             </div>
         </div>

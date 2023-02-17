@@ -8,18 +8,18 @@ function checkAdmin() {
 }
 
 
-function inizializzaStorageUtenti(){
-  if (typeof(localStorage.utenti) == "undefined") {
-    localStorage.utenti="[]";
+function initializeStorage(){
+  if (typeof(localStorage.students) == "undefined") {
+    localStorage.students="[]";
   }
 }
 
 function resetStorageUtenti(){
-  localStorage.utenti="[]";
+  localStorage.students="[]";
 }
 
 function stampaStorageSemplice(){
-  var u = JSON.parse(localStorage.utenti);
+  var u = JSON.parse(localStorage.students);
   var l = u.length;
   var s = new String("<h3>Stato di localStorage:</h3>");
   for (i=0;i<l;i++)
@@ -29,7 +29,7 @@ function stampaStorageSemplice(){
 }
 
 function stampaStorageTabella(){
-  var u = JSON.parse(localStorage.utenti);
+  var u = JSON.parse(localStorage.students);
   var l = u.length;
   var s = new String("<h3>Stato di localStorage:</h3>");
   s +="<table border=1><tr><th>cognome</th><th>nome</th><th>matricola</th></tr>";
@@ -40,24 +40,27 @@ function stampaStorageTabella(){
   return true;
 }
 
-function uguali(u,o){
-  if ((u.c==o.c)&&(u.n==o.n)&&(u.m==o.m)) 
+function equals(saved,saving){
+  if ((saved.name==saving.name)&&(saved.surname==saving.surname)&&(saved.matr==saving.matr)&&(saved.sport==saving.sport)) 
     return true;
   return false;
 }
 
 function addUser() {
-  var u = JSON.parse(localStorage.utenti);
-  var nextpos = u.length;
-  var o = { c:document.registrazione.cognome.value, 
-            n:document.registrazione.nome.value, 
-            m:document.registrazione.matricola.value };
-  for (i=0;i<nextpos;i++)
-    if(uguali(u[i],o)) {
-      alert("Utente gia' inserito");
+  var studentData = JSON.parse(localStorage.students);
+  var len = studentData.length;
+  var newStudent = { name:document.inscription.name.value, 
+            surname:document.inscription.surname.value, 
+            matr:document.inscription.matr.value,
+            sport:document.inscription.sport.value
+        };
+  for (i=0;i<len;i++)
+    if(equals(studentData[i],newStudent)) {
+      alert("You're already registered for this sport!");
       return false;
     }
-  alert("Dati inseriti correttamente");
-  u[nextpos] = o;
-  localStorage.utenti = JSON.stringify(u);
+  alert("Well done, you're registered in"+newStudent["sport"]);
+  studentData[len] = newStudent;
+  localStorage.student = JSON.stringify(studentData);
   return true;
+}
