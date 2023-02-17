@@ -59,6 +59,10 @@ body {
     color: black !important
 }
 
+.brand {
+    font-weight:bold;
+}
+
 
 /* Portfolio styles */
 
@@ -123,6 +127,7 @@ body {
       display: grid;
       grid-template-columns: 1fr;
   }
+
   }
 
 /* About page */
@@ -143,4 +148,30 @@ body {
     color: lightseagreen;
 }
 
+/* Inscription page */
+
+.form-wrapper {
+    padding: 38px;;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-choose {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.form-submit {
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1100px) {
+    .form-choose {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        
+    }
+  }
 /* https://www.youtube.com/watch?v=5bMdjkfvONE */
