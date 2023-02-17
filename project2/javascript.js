@@ -53,7 +53,7 @@ function addUser() {
             surname:document.inscription.surname.value, 
             matr:document.inscription.matr.value,
             sport:document.inscription.sport.value
-        };
+  };
   for (i=0;i<len;i++)
     if(equals(studentData[i],newStudent)) {
       alert("You're already registered for this sport!");
@@ -62,5 +62,6 @@ function addUser() {
   alert("Well done, you're registered in "+newStudent["sport"]);
   studentData[len] = newStudent;
   localStorage.students = JSON.stringify(studentData);
+  window.location.replace("index.html");
   return true;
 }
