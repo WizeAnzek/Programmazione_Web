@@ -18,7 +18,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 38px;
-    background-color: aquamarine;
+    background-color: #A41034;
 }
 
 .left-side {
@@ -145,7 +145,7 @@ body {
 }
 
 .profile-content-wrapper h1 {
-    color: lightseagreen;
+    color: #A41034;
 }
 
 /* Inscription page */
@@ -174,4 +174,35 @@ body {
         
     }
   }
-/* https://www.youtube.com/watch?v=5bMdjkfvONE */
+
+  /* table */
+  .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #A41034;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #A41034;
+}

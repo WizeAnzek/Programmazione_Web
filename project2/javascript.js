@@ -18,30 +18,21 @@ function initializeStorage(){
   }
 }
 
-function resetStorageUtenti(){
+function resetStorage(){
   if (confirm("Are you sure you want to remove all your data?"))
     if (confirm("I tell you the last time, are you really sure?"))
       localStorage.students="[]";
 }
 
-function stampaStorageSemplice(){
-  var u = JSON.parse(localStorage.students);
-  var l = u.length;
-  var s = new String("<h3>Stato di localStorage:</h3>");
-  for (i=0;i<l;i++)
-    s += JSON.stringify(u[i])+"<br/>";
-  document.getElementById("vistaStorage").innerHTML=s;
-  return true;
-}
 
-function stampaStorageTabella(){
+function printStorage(){
   var u = JSON.parse(localStorage.students);
   var l = u.length;
-  var s = new String("<h3>Stato di localStorage:</h3>");
-  s +="<table border=1><tr><th>cognome</th><th>nome</th><th>matricola</th><th>sport</th></tr>";
+  var s = new String("<h3>Inscriptions register:</h3>");
+  s +="<table class=\"styled-table\"><thead><tr><th>Name</th><th>Surname</th><th>Matriculation number</th><th>Sport</th></tr></thead><tbody>";
   for (i=0;i<l;i++)
     s += "<tr><td>"+u[i].name+"</td><td>"+u[i].surname+"</td><td>"+u[i].matr+"</td><td>"+u[i].sport+"</td></tr>";
-  s += "</table>";
+  s += "</tbody></table>";
   document.getElementById("vistaStorage").innerHTML = s;
   return true;
 }
