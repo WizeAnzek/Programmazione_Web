@@ -1,6 +1,10 @@
 function checkAdmin() {
         var user = prompt("User: ");
+          if (!user)
+            return ;
         var password = prompt("Password: ");
+          if (!password)
+            return ;
         if (user == "admin" && password == "admin")
             window.location.replace("admin.html");
         else
@@ -15,7 +19,9 @@ function initializeStorage(){
 }
 
 function resetStorageUtenti(){
-  localStorage.students="[]";
+  if (confirm("Are you sure you want to remove all your data?"))
+    if (confirm("I tell you the last time, are you really sure?"))
+      localStorage.students="[]";
 }
 
 function stampaStorageSemplice(){
